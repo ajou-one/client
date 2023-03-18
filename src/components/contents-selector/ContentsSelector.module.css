@@ -1,16 +1,30 @@
 .container {
-    width: 40%;
-    padding: 50px 36px;
+    padding: 0 220px;
+    width: calc(100% - 440px);
+    height: 50px;
+    /*padding: 50px 36px;*/
+    /*background-color: lightcoral;*/
+    display: flex;
+
 }
 
 .element {
     display: inline-flex;
     width: 250px;
-    height: 250px;
+    /*height: 250px;*/
     justify-content: center;
     align-items: center;
 
-    border: 1px solid black;
-
+    border: none;
     cursor: pointer;
+}
+
+.element:hover {
+    color: #f79433;
+    font-weight: 900;
+}
+
+.active {
+    color: #0066b3;
+    font-weight: 900;
 }

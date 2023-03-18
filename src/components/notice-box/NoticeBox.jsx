@@ -5,6 +5,7 @@ import Pagination from "../pagination/Pagination";
 
 const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPage, page }) => {
     const [currentType, setCurrentType] = useState(true);
+    const selectedTitle = ['최근 소식', '아주대학교', '경기도청', '한국장학재단'];
 
     const onClickToggle = (event) => {
         if(event.currentTarget.name === "list") {
@@ -17,7 +18,8 @@ const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPa
     return (
         <section className={S["container"]}>
             <div className={S["menu-title-container"]}>
-                <h2 className={S["menu-title"]}>notice menu</h2>
+
+                <h2 className={S["menu-title"]}>{selectedTitle[selectedTab]}</h2>
                 <div className={'flex items-center'}>
                     <Pagination
                         handleSetPrevPage={handleSetPrevPage}
