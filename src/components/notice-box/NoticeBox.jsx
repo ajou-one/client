@@ -4,6 +4,7 @@ import {useState} from "react";
 
 const NoticeBox = ({ selectedTab, noticeList }) => {
     const [currentType, setCurrentType] = useState(true);
+    const selectedTitle = ['최근 소식', '아주대학교', '경기도청', '한국장학재단'];
 
     const onClickToggle = (event) => {
         if(event.currentTarget.name === "list") {
@@ -16,7 +17,7 @@ const NoticeBox = ({ selectedTab, noticeList }) => {
     return (
         <section className={S["container"]}>
             <div className={S["menu-title-container"]}>
-                <h2 className={S["menu-title"]}>notice menu</h2>
+                <h2 className={S["menu-title"]}>{selectedTitle[selectedTab]}</h2>
                 <div>
                     <button name={"list"} onClick={onClickToggle} className={currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-left"]}` : `${S["toggle-button"]} ${S["toggle-button-left"]}`}>list</button>
                     <button name={"card"} onClick={onClickToggle} className={!currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-right"]}` : `${S["toggle-button"]} ${S["toggle-button-right"]}`}>card</button>
