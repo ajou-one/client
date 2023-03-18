@@ -1,12 +1,12 @@
 .container {
     width: 40%;
-    padding: 100px 36px;
+    padding: 50px 36px;
 }
 
 .element {
     display: inline-flex;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     justify-content: center;
     align-items: center;
 

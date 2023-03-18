@@ -13,6 +13,7 @@ const MainPage = () => {
     return (
         <div className={S["container"]}>
             <Header />
+            {/*<img className={S["container-bg"]} src={"./images/ajou-bg.jpeg"} />*/}
             <div className={'flex'}>
                 <ContentsSelector
                     selectedTab={selectedTab}
