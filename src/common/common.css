@@ -1,4 +1,5 @@
 .flex { display: flex; }
+.flex-direction-column {flex-direction: column}
 
 .justify-center { justify-content: center; }
 
@@ -30,3 +31,5 @@
 .mr-1 { margin-right: 4px; }
 .mr-2 { margin-right: 8px; }
 .mr-4 { margin-right: 16px; }
+
+.pw-100 { padding: 0 100px; }

@@ -14,11 +14,7 @@ const MainPage = () => {
         <div className={S["container"]}>
             <Header />
             {/*<img className={S["container-bg"]} src={"./images/ajou-bg.jpeg"} />*/}
-            <div className={'flex'}>
-                <ContentsSelector
-                    selectedTab={selectedTab}
-                    setSelectedTab={setSelectedTab}
-                />
+            <div className={S['flex']}>
                 <NoticeBox
                     selectedTab={selectedTab}
                     noticeList={noticeList.filter((d) => {
