@@ -9,6 +9,25 @@ const MainPage = () => {
     const [selectedTab, setSelectedTab] = useState(0);
     const [noticeList, setNoticeList] = useState(DUMMY);
     const [recentList, setRecentList] = useState(DUMMY);
+    const [page, setPage] = useState(1);
+
+    let isFirstPage;
+    let isLastPage;
+
+
+    useEffect(() => {
+        isFirstPage = page === 1;
+        isLastPage = page === 10;
+    }, [page]);
+
+    const handleSetPrevPage = () => {
+        if (isFirstPage) return;
+        setPage((cur) => --cur);
+    };
+    const handleSetNextPage = () => {
+        if (isLastPage) return;
+        setPage((cur) => ++cur);
+    };
 
     return (
         <div className={S["container"]}>
@@ -33,6 +52,9 @@ const MainPage = () => {
                             if (d.source === 8) return d;
                         }
                     })}
+                    handleSetPrevPage={handleSetPrevPage}
+                    handleSetNextPage={handleSetNextPage}
+                    page={page}
                 />
             </div>
         </div>

@@ -1,8 +1,9 @@
 import S from "./NoticeBox.module.css";
 import ClASSIFIY_CODE from "../../common/classifiy-code";
 import {useState} from "react";
+import Pagination from "../pagination/Pagination";
 
-const NoticeBox = ({ selectedTab, noticeList }) => {
+const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPage, page }) => {
     const [currentType, setCurrentType] = useState(true);
     const selectedTitle = ['최근 소식', '아주대학교', '경기도청', '한국장학재단'];
 
@@ -17,10 +18,18 @@ const NoticeBox = ({ selectedTab, noticeList }) => {
     return (
         <section className={S["container"]}>
             <div className={S["menu-title-container"]}>
+
                 <h2 className={S["menu-title"]}>{selectedTitle[selectedTab]}</h2>
-                <div>
-                    <button name={"list"} onClick={onClickToggle} className={currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-left"]}` : `${S["toggle-button"]} ${S["toggle-button-left"]}`}>list</button>
-                    <button name={"card"} onClick={onClickToggle} className={!currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-right"]}` : `${S["toggle-button"]} ${S["toggle-button-right"]}`}>card</button>
+                <div className={'flex items-center'}>
+                    <Pagination
+                        handleSetPrevPage={handleSetPrevPage}
+                        handleSetNextPage={handleSetNextPage}
+                        page={page}
+                    />
+                    <div className={'ml-4'}>
+                        <button name={"list"} onClick={onClickToggle} className={currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-left"]}` : `${S["toggle-button"]} ${S["toggle-button-left"]}`}>list</button>
+                        <button name={"card"} onClick={onClickToggle} className={!currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-right"]}` : `${S["toggle-button"]} ${S["toggle-button-right"]}`}>card</button>
+                    </div>
                 </div>
             </div>
 
