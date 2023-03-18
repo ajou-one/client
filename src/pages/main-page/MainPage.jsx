@@ -4,7 +4,7 @@ import ContentsSelector from "../../components/contents-selector/ContentsSelecto
 import {useEffect, useState} from "react";
 import NoticeBox from "../../components/notice-box/NoticeBox";
 import DUMMY from "../../common/dummy";
-import { FILTER } from "./config";
+import { QUERY_PARAM } from "./config";
 import {fetchData,API_BASE_URL,ENDPOINT_RECENT,ENDPOINT_ALL} from "../../common/request";
 
 const MainPage = () => {
@@ -19,19 +19,18 @@ const MainPage = () => {
         void (async () => {
             try {
                 if (selectedTab === 0) {
-                    // const recentResponse = await fetchData(`${API_BASE_URL}/${ENDPOINT_RECENT}`);
-                    // setNoticeList(() => recentResponse);
+                    const recentResponse = await fetchData(`${API_BASE_URL}/${ENDPOINT_RECENT}?page=${page}`);
+                    setNoticeList(() => recentResponse);
                 }
                 else {
-                    const _filter = {...FILTER[selectedTab], page: page};
-                    // const allResponse = await fetchData(`${API_BASE_URL}/${ENDPOINT_ALL}`, _filter);
-                    // setNoticeList(() => allResponse);
+                    const allResponse = await fetchData(`${API_BASE_URL}/${ENDPOINT_ALL}${QUERY_PARAM[selectedTab]}&page=${page}`);
+                    setNoticeList(() => allResponse);
                 }
             } catch {
-                alert('요청에 실패하였습니다');
+                // alert('요청에 실패하였습니다');
             }
         })();
-        setNoticeList(() => DUMMY);
+        // setNoticeList(() => DUMMY);
     }, [selectedTab, page]);
 
     useEffect(() => {
