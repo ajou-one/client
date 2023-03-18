@@ -7,20 +7,32 @@ import DUMMY from "../../common/dummy";
 
 const MainPage = () => {
     const [selectedTab, setSelectedTab] = useState(0);
-    const [noticeList, setNoticeList] = useState([]);
-
-    useEffect(() => {
-        noticeList.map(() => {
-
-        });
-    }, [selectedTab]);
+    const [noticeList, setNoticeList] = useState(DUMMY);
+    const [recentList, setRecentList] = useState(DUMMY);
 
     return (
         <div className={S["container"]}>
             <Header />
             <div className={'flex'}>
-                <ContentsSelector selectedTab={selectedTab} setSelectedTab={setSelectedTab}  />
-                <NoticeBox selectedTab={selectedTab} noticeList={DUMMY} />
+                <ContentsSelector
+                    selectedTab={selectedTab}
+                    setSelectedTab={setSelectedTab}
+                />
+                <NoticeBox
+                    selectedTab={selectedTab}
+                    noticeList={noticeList.filter((d) => {
+                        if (selectedTab === 0) return d;
+                        if (selectedTab === 1) {
+                            if (d.source >= 0 && d.source <= 7) return d;
+                        }
+                        if (selectedTab === 2) {
+                            if (d.source === 7) return d;
+                        }
+                        if (selectedTab === 3) {
+                            if (d.source === 8) return d;
+                        }
+                    })}
+                />
             </div>
         </div>
     )
