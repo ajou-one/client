@@ -30,7 +30,7 @@ const MainPage = () => {
                 // alert('요청에 실패하였습니다');
             }
         })();
-        setNoticeList(() => DUMMY);
+        // setNoticeList(() => DUMMY);
     }, [selectedTab, page]);
 
     useEffect(() => {
