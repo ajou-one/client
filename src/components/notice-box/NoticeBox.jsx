@@ -3,11 +3,10 @@ import CLASSIFY_CODE from "../../common/classify-code";
 import {useState} from "react";
 import Pagination from "../pagination/Pagination";
 import {TOGGLE_BUTTON} from "./config";
+import TAB_MENU from "../contents-selector/config";
 
 const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPage, page }) => {
     const [currentType, setCurrentType] = useState(true);
-    const selectedTitle = ['최근 소식', '교내 공지', '지역구 공지', '장학 공지'];
-
     const onClickToggle = (event) => {
         if (event.currentTarget.name === TOGGLE_BUTTON.LIST) {
             setCurrentType(prev => true);
@@ -19,7 +18,7 @@ const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPa
     return (
         <section className={S["container"]}>
             <div className={S["menu-title-container"]}>
-                <h2 className={S["menu-title"]}>{selectedTitle[selectedTab]}</h2>
+                <h2 className={S["menu-title"]}>{TAB_MENU[selectedTab]}</h2>
                 <div className={'flex items-center'}>
                     <Pagination
                         handleSetPrevPage={handleSetPrevPage}
