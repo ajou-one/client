@@ -1,8 +1,8 @@
 const QUERY_PARAM = [
     '',
-    `?start_src=0&end_src=6`,
-    `?start_src=7&end_src=8`,
-    `?start_src=9&end_src=9`,
+    `?start=0&end=6`,
+    `?start=7&end=8`,
+    `?start=9&end=9`,
 ];
 
 export { QUERY_PARAM };

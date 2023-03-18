@@ -1,67 +1,67 @@
 const DUMMY = {
     items: [
         {
-            classifyCode: 0,
+            classify_code: 0,
             title: "title 1",
             url: "aa",
         },
         {
-            classifyCode: 1,
+            classify_code: 1,
             title: "title 2",
             url: "aa",
         },
         {
-            classifyCode: 2,
+            classify_code: 2,
             title: "title 3",
             url: "aa",
         },
         {
-            classifyCode: 3,
+            classify_code: 3,
             title: "title 4",
             url: "aa",
         },
         {
-            classifyCode: 4,
+            classify_code: 4,
             title: "title 4",
             url: "aa",
         },
         {
-            classifyCode: 5,
+            classify_code: 5,
             title: "title 5",
             url: "aa",
         },
         {
-            classifyCode: 6,
+            classify_code: 6,
             title: "title 6",
             url: "aa",
         },
         {
-            classifyCode: 7,
+            classify_code: 7,
             title: "title 7",
             url: "aa",
         },
         {
-            classifyCode: 8,
+            classify_code: 8,
             title: "title 8",
             url: "aa",
         },
         {
-            classifyCode: 8,
+            classify_code: 8,
             title: "title 9",
             url: "aa",
         },
         {
-            classifyCode: 8,
+            classify_code: 8,
             title: "title 10",
             url: "aa",
         },
         {
-            classifyCode: 8,
+            classify_code: 8,
             title: "title 11",
             url: "aa",
         },
         {
-            classifyCode: 9,
+            classify_code: 9,
             title: "title 99",
             url: "aa",
         },

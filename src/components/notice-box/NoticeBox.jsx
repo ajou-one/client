@@ -43,8 +43,8 @@ const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPa
                         <a href={d.url} key={`notice-element-${i}`}>
                             <div className={S["element"]}>
                                 <div>
-                                    <img className={S["icon"]} src={CLASSIFY_CODE[d.classifyCode].icon} />
-                                    <span className={S["source"]}> [{CLASSIFY_CODE[d.classifyCode].kr}] </span>
+                                    <img className={S["icon"]} src={CLASSIFY_CODE[d.classify_code].icon} />
+                                    <span className={S["source"]}> [{CLASSIFY_CODE[d.classify_code].kr}] </span>
                                 </div>
                                 <span className={S["title"]}> {d.title}</span>
                             </div>
@@ -55,8 +55,8 @@ const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPa
                         <a href={d.url} key={`notice-element-${i}`}>
                             <div className={S["card-element"]}>
                                 <div>
-                                    <img src={CLASSIFY_CODE[d.classifyCode].icon} />
-                                    <span className={'mr-2'}> [{CLASSIFY_CODE[d.classifyCode].kr}] </span>
+                                    <img src={CLASSIFY_CODE[d.classify_code].icon} />
+                                    <span className={'mr-2'}> [{CLASSIFY_CODE[d.classify_code].kr}] </span>
                                 </div>
                                 <span className={S["title"]}> {d.title}</span>
                             </div>
