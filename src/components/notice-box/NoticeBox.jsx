@@ -27,8 +27,14 @@ const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPa
                         page={page}
                     />
                     <div className={'ml-4'}>
-                        <button name={"list"} onClick={onClickToggle} className={currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-left"]}` : `${S["toggle-button"]} ${S["toggle-button-left"]}`}>list</button>
-                        <button name={"card"} onClick={onClickToggle} className={!currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-right"]}` : `${S["toggle-button"]} ${S["toggle-button-right"]}`}>card</button>
+                        <button
+                            name={"list"}
+                            onClick={onClickToggle}
+                            className={currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-left"]}` : `${S["toggle-button"]} ${S["toggle-button-left"]}`}>list</button>
+                        <button
+                            name={"card"}
+                            onClick={onClickToggle}
+                            className={!currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-right"]}` : `${S["toggle-button"]} ${S["toggle-button-right"]}`}>card</button>
                     </div>
                 </div>
             </div>
