@@ -1,5 +1,4 @@
 .container {
-    /*background-color: lightcoral;*/
     width: 100%;
     padding: 50px 220px;
 
@@ -18,11 +17,23 @@
     border: 1px solid #dcdcdc;
     border-radius: 16px;
     display: flex;
+    flex-direction: row;
     align-items: center;
 
     box-sizing: border-box;
     padding: 16px;
     margin-bottom: 16px;
+}
+
+.element div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 8px;
+}
+.element div .source{
+    display: block;
+    width: max-content;
 }
 
 .element:hover {
@@ -43,7 +54,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /*background-color: lime;*/
 }
 
 .menu-title {
@@ -58,7 +68,7 @@
 }
 
 .toggle-button:hover {
-    background-color: #aaaaaa;
+    background-color: #dcdcdc;
 }
 
 .toggle-button-left {
@@ -75,5 +85,84 @@
 }
 
 .button-active {
-    background-color: #aaaaaa;
+    background-color: #dcdcdc;
+}
+
+.list-container {
+    width: 100%;
+    height: 100%;
+}
+
+.list-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.list-container a:visited {
+    color: #00498c;
+}
+
+.list-container a .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+/* notice card css */
+.card-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-container a {
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.card-container a:visited {
+    color: #00498c;
+}
+
+.card-element {
+    width: 280px;
+    height: 120px;
+    border-radius: 15px;
+    border: 1px solid #dcdcdc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-element div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card-element div img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.card-element .title {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.card-element:hover {
+    background-color: #dcdcdc;
 }

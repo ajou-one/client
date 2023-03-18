@@ -31,18 +31,33 @@ const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPa
                 </div>
             </div>
 
-            {currentType ? noticeList.map((d, i) => {
-                return (
-                    <a href={d.url} key={`notice-element-${i}`}>
-                        <div className={S["element"]}>
-                            <img className={S["icon"]} src={ClASSIFIY_CODE[d.source].icon} />
-                            <span className={'mr-2'}> [{ClASSIFIY_CODE[d.source].kr}] </span>
-                            <span> {d.title}</span>
-                        </div>
-                    </a>
-                )
-            }) : null }
-
+            <div className={!currentType ? S["card-container"] : S["list-container"]}>
+                {currentType ? noticeList.map((d, i) => {
+                    return (
+                        <a href={d.url} key={`notice-element-${i}`}>
+                            <div className={S["element"]}>
+                                <div>
+                                    <img className={S["icon"]} src={ClASSIFIY_CODE[d.source].icon} />
+                                    <span className={S["source"]}> [{ClASSIFIY_CODE[d.source].kr}] </span>
+                                </div>
+                                <span className={S["title"]}> {d.title}</span>
+                            </div>
+                        </a>
+                    )
+                }) : noticeList.map((d, i) => {
+                    return (
+                        <a href={d.url} key={`notice-element-${i}`}>
+                            <div className={S["card-element"]}>
+                                <div>
+                                    <img src={ClASSIFIY_CODE[d.source].icon} />
+                                    <span className={'mr-2'}> [{ClASSIFIY_CODE[d.source].kr}] </span>
+                                </div>
+                                <span className={S["title"]}> {d.title}</span>
+                            </div>
+                        </a>
+                    )})
+                }
+            </div>
         </section>
     )
 }
