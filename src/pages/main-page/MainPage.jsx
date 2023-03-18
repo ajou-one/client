@@ -4,25 +4,44 @@ import ContentsSelector from "../../components/contents-selector/ContentsSelecto
 import {useEffect, useState} from "react";
 import NoticeBox from "../../components/notice-box/NoticeBox";
 import DUMMY from "../../common/dummy";
+import { FILTER } from "./config";
+import {fetchData,API_BASE_URL,ENDPOINT_RECENT,ENDPOINT_ALL} from "../../common/request";
 
 const MainPage = () => {
     const [selectedTab, setSelectedTab] = useState(0);
     const [noticeList, setNoticeList] = useState({items: [], meta: { total: 1 }});
-    const [recentList, setRecentList] = useState( {items: [], meta: { total : 1 }});
     const [page, setPage] = useState(1);
+    const [isFirstPage, setIsFirstPage] = useState();
+    const [isLastPage, setIsLastPage] = useState();
 
-    let isFirstPage;
-    let isLastPage;
-
-    useEffect(() => {
-        setNoticeList(DUMMY);
-        setRecentList(DUMMY);
-    }, []);
 
     useEffect(() => {
-        isFirstPage = page === 1;
-        isLastPage = page === noticeList.meta.total;
-    }, [page, selectedTab]);
+        void (async () => {
+            try {
+                if (selectedTab === 0) {
+                    // const recentResponse = await fetchData(`${API_BASE_URL}/${ENDPOINT_RECENT}`);
+                    // setNoticeList(() => recentResponse);
+                }
+                else {
+                    const _filter = {...FILTER[selectedTab], page: page};
+                    // const allResponse = await fetchData(`${API_BASE_URL}/${ENDPOINT_ALL}`, _filter);
+                    // setNoticeList(() => allResponse);
+                }
+            } catch {
+                alert('요청에 실패하였습니다');
+            }
+        })();
+        setNoticeList(() => DUMMY);
+    }, [selectedTab, page]);
+
+    useEffect(() => {
+        setIsFirstPage(() => page === 1);
+        setIsLastPage(() => page === noticeList.meta.total);
+    }, [noticeList, page]);
+
+    useEffect(() => {
+        setPage(1);
+    }, [selectedTab]);
 
     const handleSetPrevPage = () => {
         if (isFirstPage) return;
@@ -36,7 +55,6 @@ const MainPage = () => {
     return (
         <div className={S["container"]}>
             <Header />
-            {/*<img className={S["container-bg"]} src={"./images/ajou-bg.jpeg"} />*/}
             <ContentsSelector
                 selectedTab={selectedTab}
                 setSelectedTab={setSelectedTab}
