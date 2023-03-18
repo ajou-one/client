@@ -1,6 +1,7 @@
 .container {
-    width: 60%;
-    padding: 50px 36px;
+    /*background-color: lightcoral;*/
+    width: 100%;
+    padding: 50px 220px;
 
     box-sizing: border-box;
 }
@@ -29,4 +30,41 @@
     width: 36px;
     height: 36px;
     margin-right: 8px;
+}
+
+.menu-title-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /*background-color: lime;*/
+}
+
+.menu-title {
+    font-size: 36px;
+}
+
+.toggle-button {
+    border: none;
+    height: 30px;
+    width: 48px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: whitesmoke;
+}
+
+.toggle-button-left {
+    border-left: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+
+    border-radius: 10px 0 0 10px;
+}
+
+.toggle-button-right {
+    border: 1px solid lightgray;
+    border-radius: 0 10px 10px 0;
 }
