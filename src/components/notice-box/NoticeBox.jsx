@@ -4,6 +4,7 @@ import {useState} from "react";
 
 const NoticeBox = ({ selectedTab, noticeList }) => {
     const [currentType, setCurrentType] = useState(true);
+    const selectedTitle = ['최근 소식', '아주대학교', '경기도청', '한국장학재단'];
 
     const onClickToggle = (event) => {
         if(event.currentTarget.name === "list") {
@@ -16,25 +17,40 @@ const NoticeBox = ({ selectedTab, noticeList }) => {
     return (
         <section className={S["container"]}>
             <div className={S["menu-title-container"]}>
-                <h2 className={S["menu-title"]}>notice menu</h2>
+                <h2 className={S["menu-title"]}>{selectedTitle[selectedTab]}</h2>
                 <div>
                     <button name={"list"} onClick={onClickToggle} className={currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-left"]}` : `${S["toggle-button"]} ${S["toggle-button-left"]}`}>list</button>
                     <button name={"card"} onClick={onClickToggle} className={!currentType ? `${S["button-active"]} ${S["toggle-button"]} ${S["toggle-button-right"]}` : `${S["toggle-button"]} ${S["toggle-button-right"]}`}>card</button>
                 </div>
             </div>
 
-            {currentType ? noticeList.map((d, i) => {
-                return (
-                    <a href={d.url} key={`notice-element-${i}`}>
-                        <div className={S["element"]}>
-                            <img className={S["icon"]} src={ClASSIFIY_CODE[d.source].icon} />
-                            <span className={'mr-2'}> [{ClASSIFIY_CODE[d.source].kr}] </span>
-                            <span> {d.title}</span>
-                        </div>
-                    </a>
-                )
-            }) : null }
-
+            <div className={!currentType ? S["card-container"] : S["list-container"]}>
+                {currentType ? noticeList.map((d, i) => {
+                    return (
+                        <a href={d.url} key={`notice-element-${i}`}>
+                            <div className={S["element"]}>
+                                <div>
+                                    <img className={S["icon"]} src={ClASSIFIY_CODE[d.source].icon} />
+                                    <span className={S["source"]}> [{ClASSIFIY_CODE[d.source].kr}] </span>
+                                </div>
+                                <span className={S["title"]}> {d.title}</span>
+                            </div>
+                        </a>
+                    )
+                }) : noticeList.map((d, i) => {
+                    return (
+                        <a href={d.url} key={`notice-element-${i}`}>
+                            <div className={S["card-element"]}>
+                                <div>
+                                    <img src={ClASSIFIY_CODE[d.source].icon} />
+                                    <span className={'mr-2'}> [{ClASSIFIY_CODE[d.source].kr}] </span>
+                                </div>
+                                <span className={S["title"]}> {d.title}</span>
+                            </div>
+                        </a>
+                    )})
+                }
+            </div>
         </section>
     )
 }
