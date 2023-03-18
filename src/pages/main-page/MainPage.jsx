@@ -1,6 +1,9 @@
 import './MainPage.module.css';
-const MainPage = ()=> {
-    return <h1>Main</h1>
+import Header from "../../components/header/Header";
+const MainPage = () => {
+    return (
+        <Header />
+    )
 }
 
 export default MainPage;
