@@ -53,7 +53,7 @@
 }
 
 .toggle-button:hover {
-    background-color: whitesmoke;
+    background-color: #aaaaaa;
 }
 
 .toggle-button-left {
@@ -67,4 +67,8 @@
 .toggle-button-right {
     border: 1px solid lightgray;
     border-radius: 0 10px 10px 0;
+}
+
+.button-active {
+    background-color: #aaaaaa;
 }
