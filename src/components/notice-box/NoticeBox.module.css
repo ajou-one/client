@@ -1,0 +1,16 @@
+.container {
+    width: 60%;
+    padding: 100px 36px;
+
+    box-sizing: border-box;
+}
+
+.container-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.element {
+    line-height: 1.75;
+}

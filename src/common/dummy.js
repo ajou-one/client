@@ -1,26 +1,26 @@
 const DUMMY = [
     {
-        source: "ajou-univ",
+        source: 0,
         title: "title 1",
         url: "aa",
     },
     {
-        source: "sw-college",
+        source: 1,
         title: "title 2",
         url: "aa",
     },
     {
-        source: "cs-major",
+        source: 2,
         title: "title 3",
         url: "aa",
     },
     {
-        source: "ajou-dorm",
+        source: 3,
         title: "title 4",
         url: "aa",
     },
     {
-        source: "ajou-teacher",
+        source: 4,
         title: "title 5",
         url: "aa",
     },

@@ -1,0 +1,14 @@
+.container {
+    width: 40%;
+    padding: 100px 36px;
+}
+
+.element {
+    display: inline-flex;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+}
