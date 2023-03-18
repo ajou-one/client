@@ -5,7 +5,7 @@ import Pagination from "../pagination/Pagination";
 
 const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPage, page }) => {
     const [currentType, setCurrentType] = useState(true);
-    const selectedTitle = ['최근 소식', '아주대학교', '경기도청', '한국장학재단'];
+    const selectedTitle = ['최근 소식', '교내 공지', '지역구 공지', '장학 공지'];
 
     const onClickToggle = (event) => {
         if(event.currentTarget.name === "list") {
