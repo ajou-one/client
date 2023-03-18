@@ -1,5 +1,5 @@
 import S from "./NoticeBox.module.css";
-import ClASSIFIY_CODE from "../../common/classifiy-code";
+import CLASSIFY_CODE from "../../common/classify-code";
 import {useState} from "react";
 import Pagination from "../pagination/Pagination";
 
@@ -45,8 +45,8 @@ const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPa
                         <a href={d.url} key={`notice-element-${i}`}>
                             <div className={S["element"]}>
                                 <div>
-                                    <img className={S["icon"]} src={ClASSIFIY_CODE[d.source].icon} />
-                                    <span className={S["source"]}> [{ClASSIFIY_CODE[d.source].kr}] </span>
+                                    <img className={S["icon"]} src={CLASSIFY_CODE[d.classifyCode].icon} />
+                                    <span className={S["source"]}> [{CLASSIFY_CODE[d.classifyCode].kr}] </span>
                                 </div>
                                 <span className={S["title"]}> {d.title}</span>
                             </div>
@@ -57,8 +57,8 @@ const NoticeBox = ({ selectedTab, noticeList, handleSetPrevPage, handleSetNextPa
                         <a href={d.url} key={`notice-element-${i}`}>
                             <div className={S["card-element"]}>
                                 <div>
-                                    <img src={ClASSIFIY_CODE[d.source].icon} />
-                                    <span className={'mr-2'}> [{ClASSIFIY_CODE[d.source].kr}] </span>
+                                    <img src={CLASSIFY_CODE[d.classifyCode].icon} />
+                                    <span className={'mr-2'}> [{CLASSIFY_CODE[d.classifyCode].kr}] </span>
                                 </div>
                                 <span className={S["title"]}> {d.title}</span>
                             </div>

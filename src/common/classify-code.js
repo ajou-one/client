@@ -1,4 +1,4 @@
-const ClASSIFIY_CODE = [
+const CLASSIFY_CODE = [
     {
         name: "ajou-univ",
         kr: "아주대학교",
@@ -61,4 +61,4 @@ const ClASSIFIY_CODE = [
     }
 ];
 
-export default ClASSIFIY_CODE;
+export default CLASSIFY_CODE;

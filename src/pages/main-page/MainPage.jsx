@@ -65,13 +65,13 @@ const MainPage = () => {
                     noticeList={noticeList.items.filter((d) => {
                         if (selectedTab === 0) return d;
                         if (selectedTab === 1) {
-                            if (d.source >= 0 && d.source <= 6) return d;
+                            if (d.classifyCode >= 0 && d.classifyCode <= 6) return d;
                         }
                         if (selectedTab === 2) {
-                            if (d.source >= 7 && d.source <= 8) return d;
+                            if (d.classifyCode >= 7 && d.classifyCode <= 8) return d;
                         }
                         if (selectedTab === 3) {
-                            if (d.source === 9) return d;
+                            if (d.classifyCode === 9) return d;
                         }
                     })}
                     handleSetPrevPage={handleSetPrevPage}
