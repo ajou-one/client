@@ -7,18 +7,22 @@ import DUMMY from "../../common/dummy";
 
 const MainPage = () => {
     const [selectedTab, setSelectedTab] = useState(0);
-    const [noticeList, setNoticeList] = useState(DUMMY);
-    const [recentList, setRecentList] = useState(DUMMY);
+    const [noticeList, setNoticeList] = useState({items: [], meta: { total: 1 }});
+    const [recentList, setRecentList] = useState( {items: [], meta: { total : 1 }});
     const [page, setPage] = useState(1);
 
     let isFirstPage;
     let isLastPage;
 
+    useEffect(() => {
+        setNoticeList(DUMMY);
+        setRecentList(DUMMY);
+    }, []);
 
     useEffect(() => {
         isFirstPage = page === 1;
-        isLastPage = page === 10;
-    }, [page]);
+        isLastPage = page === noticeList.meta.total;
+    }, [page, selectedTab]);
 
     const handleSetPrevPage = () => {
         if (isFirstPage) return;
@@ -36,7 +40,7 @@ const MainPage = () => {
             <div className={S['flex']}>
                 <NoticeBox
                     selectedTab={selectedTab}
-                    noticeList={noticeList.filter((d) => {
+                    noticeList={noticeList.items.filter((d) => {
                         if (selectedTab === 0) return d;
                         if (selectedTab === 1) {
                             if (d.source >= 0 && d.source <= 7) return d;
